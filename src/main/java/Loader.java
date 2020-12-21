@@ -28,15 +28,15 @@ public class Loader
         SAXParser parser = factory.newSAXParser();
         XMLHandler handler = new XMLHandler();
 
-        /*long usageSAX = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+        long usageSAX = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         parser.parse(new File(fileName), handler);
         usageSAX = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory() - usageSAX;
         System.out.println("Утилизация МЕМ при использовании SAXParser: " + (int)(usageSAX/1048576.0) + "MB");
 
         handler.printResult();
-        handler.printWorkTime();*/
+        handler.printWorkTime();
 
-        long usageDOM = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+        /*long usageDOM = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         parseFile(fileName);
         usageDOM = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory() - usageDOM;
         System.out.println("Утилизация МЕМ при использовании DOMParser: " + (int)(usageDOM/1048576.0) + "MB");
@@ -56,7 +56,7 @@ public class Loader
             if(count > 1) {
                 System.out.println("\t" + voter + " - " + count);
             }
-        }
+        }*/
     }
 
     private static void parseFile(String fileName) throws Exception
