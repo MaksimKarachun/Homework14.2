@@ -22,9 +22,12 @@ public class Loader
 
     public static void main(String[] args) throws Exception
     {
-        String fileName = "res/data-18M.xml";
+        String fileName = "res/data-0.2M.xml";
 
-        SAXParserFactory factory = SAXParserFactory.newInstance();
+        StaxParser staxParser = new StaxParser();
+        staxParser.parseFile(fileName);
+
+        /*SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
         XMLHandler handler = new XMLHandler();
 
@@ -34,7 +37,7 @@ public class Loader
         System.out.println("Утилизация МЕМ при использовании SAXParser: " + (int)(usageSAX/1048576.0) + "MB");
 
         handler.printResult();
-        handler.printWorkTime();
+        handler.printWorkTime();*/
 
         /*long usageDOM = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         parseFile(fileName);
