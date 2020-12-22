@@ -25,7 +25,14 @@ public class Loader
         String fileName = "res/data-0.2M.xml";
 
         StaxParser staxParser = new StaxParser();
+
+        long usageStax = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         staxParser.parseFile(fileName);
+        usageStax = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory() - usageStax;
+        System.out.println("Утилизация МЕМ при использовании SAXParser: " + (int)(usageStax/1048576.0) + "MB");
+
+        staxParser.printResult();
+        staxParser.printWorkTime();
 
         /*SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
