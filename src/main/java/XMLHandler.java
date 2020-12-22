@@ -68,8 +68,9 @@ public class XMLHandler extends DefaultHandler {
 
         boolean perionNotInList = true;
 
-        for(TimePeriod period : periods)
+        for(int i = 0; i < periods.size(); i++)
         {
+            TimePeriod period = periods.get(i);
             if(period.compareTo(newPeriod) == 0)
             {
                 period.appendTime(time);
